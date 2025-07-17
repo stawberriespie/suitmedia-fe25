@@ -1,12 +1,69 @@
-# React + Vite
+# Suitmedia Ideas Page (Magang Berdampak 2025)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a front-end implementation of the **Ideas** page from Suitmedia, developed as part of the **Magang Berdampak 2025** technical test.
 
-Currently, two official plugins are available:
+## 🔍 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Responsive header with hide-on-scroll behavior
+- ✅ Banner section with parallax scroll effect and angled bottom
+- ✅ Dynamic post list with API integration from Suitmedia backend
+- ✅ Sorting (latest/oldest) & pagination controls
+- ✅ Lazy loading for images
+- ✅ 3-line ellipsis on post titles
+- ✅ Clean and responsive UI
 
-## Expanding the ESLint configuration
+## ⚙️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- CSS (no framework)
+
+## 🔗 API Endpoint
+
+Data is fetched from Suitmedia's public API:
+https://suitmedia-backend.suitdev.com/api/ideas
+with parameters:
+- ?page[number]=1
+- &page[size]=10
+- &append[]=small_image
+- &append[]=medium_image
+- &sort=-published_at
+
+
+## 🚀 Getting Started
+
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/stawberriespie/suitmedia-fe25.git
+cd suitmedia-fe25
+```
+### 2. Install dependencies
+```bash
+npm install
+```
+### 3. Run the development server
+```bash
+npm run dev
+```
+Visit http://localhost:5173 to view the app.
+
+## 📦 Folder Structure
+```bash
+src/
+│
+├── components/
+│   ├── Banner.jsx
+│   ├── PostCard.jsx
+│   ├── PostGrid.jsx
+│   ├── Pagination.jsx
+│   ├── Loading.jsx
+│
+├── services/
+│   ├── api.js
+│ 
+├── App.jsx
+├── main.jsx
+├── styles/
+│   └── *.css
